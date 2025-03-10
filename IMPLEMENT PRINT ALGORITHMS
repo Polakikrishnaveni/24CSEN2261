@@ -1,0 +1,22 @@
+#include <stdio.h>
+void printMessage(char message[]) {
+   printf("%s\n", message);
+}
+void printNumbers(int num, float decimal) {
+   printf("Integer: %d, Float: %.2f\n", num, decimal);
+}
+void printRepeatedChar(char ch, int times) {
+   for (int i = 0; i < times; i++) {
+       printf("%c ", ch);
+   }
+   printf("\n");
+}
+int main() {
+   printMessage("Hello, World!");
+   printNumbers(42, 3.14);
+   printRepeatedChar('*', 5);
+ return 0;
+}
+
+
+
