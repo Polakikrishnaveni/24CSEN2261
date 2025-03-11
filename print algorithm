@@ -1,0 +1,29 @@
+#include <stdio.h>
+void printIntArray(int arr[], int size) {
+    printf("Integer Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void printCharArray(char arr[], int size) {
+    printf("Character Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%c ", arr[i]);
+    }
+    printf("\n");
+}
+void printString(char str[]) {
+    printf("String: %s\n", str);
+}
+int main() {
+    int numbers[] = {10, 20, 30, 40, 50};
+    int numSize = sizeof(numbers) / sizeof(numbers[0]);
+    char letters[] = {'H', 'E', 'L', 'L', 'O'};
+    int charSize = sizeof(letters) / sizeof(letters[0]);
+    char message[] = "Print Algorithm in C";
+    printIntArray(numbers, numSize);
+    printCharArray(letters, charSize);
+    printString(message);
+ return 0;
+}
