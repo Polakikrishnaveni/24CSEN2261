@@ -1,0 +1,22 @@
+class Node:
+    def __init__(self, x): self.data, self.left, self.right = x, None, None
+
+def delete(root, key):
+    if not root: return None
+    q, key_node = [root], None
+    while q:
+        temp = q.pop(0)
+        if temp.data == key: key_node = temp
+        if temp.left: q.append(temp.left)
+        if temp.right: q.append(temp.right)
+    if key_node: key_node.data, temp.data = temp.data, key_node.data; _delete(root, temp)
+    return root
+
+def _delete(root, d):  # delete deepest node d
+    q = [root]
+    while q:
+        temp = q.pop(0)
+        if temp.left == d: temp.left = None; return
+        elif temp.right == d: temp.right = None; return
+        if temp.left: q.append(temp.left)
+        if temp.right: q.append(temp.right)
