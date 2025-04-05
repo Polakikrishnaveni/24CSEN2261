@@ -1,0 +1,17 @@
+from collections import deque
+
+def bfs(root):
+    q = deque([root])
+    while q:
+        n = q.popleft()
+        print(n.val, end=' ')
+        if n.left: q.append(n.left)
+        if n.right: q.append(n.right)
+
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val, self.left, self.right = val, left, right
+
+# Example
+r = Node('A', Node('B', Node('D'), Node('E')), Node('C', None, Node('F')))
+bfs(r)
