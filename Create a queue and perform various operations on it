@@ -1,0 +1,10 @@
+q = []
+
+q.append(1)
+q.append(2)
+q.append(3)
+
+print("Queue:", q)
+print("Dequeued:", q.pop(0))
+print("Front:", q[0])
+print("Empty?", not q)
