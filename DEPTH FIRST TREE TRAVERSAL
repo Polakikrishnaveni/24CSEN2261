@@ -1,0 +1,10 @@
+class N:
+    def __init__(s,v): s.v=v; s.l=s.r=None
+
+def pre(n): print(n.v,end=' ') if n else None; pre(n.l) if n else None; pre(n.r) if n else None
+def ino(n): ino(n.l) if n else None; print(n.v,end=' ') if n else None; ino(n.r) if n else None
+def post(n): post(n.l) if n else None; post(n.r) if n else None; print(n.v,end=' ') if n else None
+
+r=N('A'); r.l=N('B'); r.r=N('C'); r.l.l=N('D'); r.l.r=N('E'); r.r.l=N('F'); r.r.r=N('G')
+
+pre(r); print(); ino(r); print(); post(r)
