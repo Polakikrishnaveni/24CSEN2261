@@ -1,0 +1,28 @@
+V = 6
+selected = [False] * V
+selected[0] = True  
+
+print("Edge \tWeight")
+
+for _ in range(V - 1):
+    min_w = 999
+    x = y = 0
+    for i in range(V):
+        if selected[i]:
+            for j in range(V):
+                if not selected[j] and G[i][j]:
+                    if G[i][j] < min_w:
+                        min_w = G[i][j]
+                        x, y = i, j
+    print(f"{chr(x+65)}-{chr(y+65)} \t{G[x][y]}")
+    selected[y] = True
+
+
+
+OUTPUT
+Edge    Weight
+B-C     3
+D-E     2
+E-F     2
+B-D     6
+A-B     7
